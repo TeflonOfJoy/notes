@@ -14,6 +14,7 @@
   is-thesis: false,
   thesis-type: none,
   authors: (),
+  lecturer: none,
 ) = {
   set page(numbering: none)
 
@@ -122,6 +123,15 @@
           ])
         )),
       )
+    }
+
+    #if lecturer != none {
+      let lecturers = if type(lecturer) == array { lecturer } else { (lecturer,) }
+      let lecturer-title = if lecturers.len() > 1 { "Lecturers" } else { "Lecturer" }
+      v(2em)
+      text(size: sizes.subsubsubsection)[
+        #strong(lecturer-title + ":") #lecturers.join(", ")
+      ]
     }
   ])
 
