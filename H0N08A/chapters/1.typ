@@ -1,4 +1,5 @@
 #import "../../src/typxidian.typ": *
+#import "@preview/physica:0.9.8"
 
 = What is Machine Learning?
 
@@ -23,4 +24,22 @@ Learning methods are often (but not always) categorized according to three thing
 The example that is often used of the learning process leading from data to a ML model is the Iris Dataset.
 
 The Iris Dataset goal is very simple: learn a model that given a picture of a flower, tells us what species of Iris it is.
-The "Classic" method of approaching this problem is to estimate the different features of the flower, in this case (SL, SW, PL, PW) from the picture and only then use a function _f_ to 
+The "Classic" method of approaching this problem is to estimate the different features of the flower, in this case (SL, SW, PL, PW) from the picture and only then use a learned mathematical function _f_ to tell us what species of Iris this is.
+
+The second method is what is called "end-to-end": $f(S) = P$, where P is a data structure that represents a picture and S is a textual description.
+
+#pagebreak()
+
+== Predictive vs descriptive
+
+#table(
+  columns: 2,
+  align: center,
+  [#emph(text(red)[Predictive])], [#emph(text(blue)[Descriptive])],
+  [It learns a model that can predict a particular property OR attribute OR variable from inputs], [Given a dataset it describes a certain pattern OR patterns in the dataset (or population it was drawn from)]
+)
+
+Let us give some examples (many tasks can be special cases of predictive):
+- #text("Face recognition", fill: red)
+- #text("Analyzing large databases", fill: blue)
+- #text("Spam filtering", fill: red)
